@@ -6,12 +6,12 @@ shorts={
   "G" => "green",
   "R" => "red",
   "BRB" => "Be right back",
-  "LOL" => "Laughing out lout"
+  "LOL" => "Laughing out loud"
 }
 
 text=$stdin.read
 
-res=text.gsub(/[A-Z]+\b/) do | m | 
+res=text.gsub(/[A-Z]+(\b|\s)/) do | m | 
   shorts[m] ? shorts[m] : m
 end
 
